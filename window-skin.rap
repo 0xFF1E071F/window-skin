@@ -1,0 +1,53 @@
+[Project]
+Assembler=Masm
+Type=Win32 App
+Description=window-skin
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[Files]
+1=window-skin.Asm
+2=window-skin.Inc
+3=window-skin.Rc
+4=window-skin.dlg
+[MakeFiles]
+0=window-skin.rap
+1=window-skin.rc
+2=window-skin.asm
+3=window-skin.obj
+4=window-skin.res
+5=window-skin.exe
+6=window-skin.def
+7=window-skin.dll
+8=window-skin.txt
+9=window-skin.lib
+10=window-skin.mak
+11=window-skin.hla
+12=window-skin.com
+[MakeDef]
+Menu=1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+7=0,0,"$E\OllyDbg",5
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /Zi /nologo /I"$I",2
+13=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,"$E\OllyDbg",5
+[Resource]
+[StringTable]
+[VerInf]
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=3
+4=3
+[AutoLoad]
+AutoLoad=
