@@ -14,7 +14,12 @@ DlgProc			PROTO	:HWND,:UINT,:WPARAM,:LPARAM
 
 .const
 
-IDD_DIALOG1			equ 101
+;window-skin.dlg
+IDD_DIALOG1						equ 101
+IDC_BTN1						equ 1001
+
+;window-skin.Rc
+
 
 ;#########################################################################
 
