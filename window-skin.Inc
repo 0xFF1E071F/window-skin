@@ -27,13 +27,13 @@ IDC_BTN1						equ 1001
 ;#########################################################################
 .data
 
-hdc					dd 0
-hdc_bitmap 			dd 0
-hBitmap 			dd 0
-hRgn				dd 0
-hBrush				dd 0
-.data?
 
+.data?
+hdc					dd ?
+hRgn				dd ?
+hrBg				dd ?
+hBrush				dd ?
+hBitmap 			dd ?
 hInstance			dd ?
 
 ;#########################################################################

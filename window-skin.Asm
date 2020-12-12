@@ -18,22 +18,27 @@ start:
 ;########################################################################
 
 DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
-
 	mov		eax,uMsg
 	.if eax==WM_INITDIALOG
-
+		
 	.elseif eax==WM_COMMAND
-		.if wParam == IDC_BTN1
-;			invoke CreateSolidBrush,  0ffff00h
-;			mov hBrush, eax
-;			invoke SetClassLong, hWin, GCL_HBRBACKGROUND, hBrush
+		.if wParam == 1001
+			
 		.endif
 	.elseif eax==WM_ERASEBKGND
-		invoke MessageBox,0,0,0,MB_OK
-;		invoke CreateSolidBrush,  0ffff00h
-;		mov hBrush, eax
-;		invoke SetClassLong, hWin, GCL_HBRBACKGROUND, hBrush
+		invoke GetDC,hWin
+		mov hdc,eax
+		invoke CreateSolidBrush,000ffh
+		mov hBrush, eax
+		invoke CreateRectRgn,0,0,300,300
+		mov hrBg,eax 
+		
+		invoke FillRgn,hdc,hrBg,hBrush
 	.elseif eax==WM_CLOSE
+		invoke DeleteObject, hBrush
+		invoke DeleteObject, hrBg
+		invoke ReleaseDC,hWin,hdc
+		
 		invoke EndDialog,hWin,0
 	.else
 		mov		eax,FALSE
