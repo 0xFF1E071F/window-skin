@@ -26,6 +26,7 @@ DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 			
 		.endif
 	.elseif eax==WM_ERASEBKGND
+		; Set color background fill on start
 		invoke GetDC,hWin
 		mov hdc,eax
 		invoke CreateSolidBrush,000ffh
