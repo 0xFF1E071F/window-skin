@@ -24,8 +24,15 @@ DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 
 	.elseif eax==WM_COMMAND
 		.if wParam == IDC_BTN1
-			invoke MessageBox,0,0,0,MB_OK
+;			invoke CreateSolidBrush,  0ffff00h
+;			mov hBrush, eax
+;			invoke SetClassLong, hWin, GCL_HBRBACKGROUND, hBrush
 		.endif
+	.elseif eax==WM_ERASEBKGND
+		invoke MessageBox,0,0,0,MB_OK
+;		invoke CreateSolidBrush,  0ffff00h
+;		mov hBrush, eax
+;		invoke SetClassLong, hWin, GCL_HBRBACKGROUND, hBrush
 	.elseif eax==WM_CLOSE
 		invoke EndDialog,hWin,0
 	.else
