@@ -44,6 +44,8 @@ Menu=1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
 [Resource]
 1=,2001,0,clock1.bmp
 2=,2002,0,clock2.bmp
+3=RANGE1,0,3,clock1.rgn
+4=RANGE2,0,3,clock2.rgn
 [StringTable]
 [VerInf]
 [Group]
@@ -53,7 +55,7 @@ Group=Added files,Assembly,Resources,Misc,Modules
 3=3
 4=3
 [AutoLoad]
-AutoLoad=4,1,2
+AutoLoad=1,2
 [RADebugBP]
 2=
 1=
@@ -100,11 +102,11 @@ ProductVer4Range=0
 6=00FFFFFF
 7=00FFFFFF
 [PTimer]
-PTimer=44069061
+PTimer=44844593
 [Size]
 4=0,0,0,0
-2=2,0,492,904,388
-1=494,0,985,904,721
+2=0,0,427,904,388
+1=426,0,1052,904,847
 [Collapse]
 2=
 1=

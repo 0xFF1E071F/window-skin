@@ -29,6 +29,21 @@ DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 			mov hBrush, eax
 			invoke FillRgn,hdc,hrBg,hBrush
 			
+			; Select region from resource
+			invoke  FindResource,hInstance,addr ResName2,addr ResType
+	        mov     hRes, eax
+	        invoke  LoadResource,hInstance, hRes
+	        mov     ResPoint, eax
+	        invoke  SizeofResource,hInstance,hRes
+	        mov     ResSize, eax
+	        invoke  LockResource,ResPoint
+	        mov     ResPoint, eax          
+	
+			; Create region
+	        invoke  ExtCreateRegion,NULL,ResSize,eax
+	        invoke  SetWindowRgn,hWin,eax,TRUE
+	    .elseif wParam == IDC_BTN2
+	    	invoke  SendMessage,hWin,WM_CLOSE,0,0
 		.endif
 	.elseif eax==WM_ERASEBKGND
 		; Set color background fill on start
