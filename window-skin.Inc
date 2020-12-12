@@ -34,6 +34,8 @@ ResName1	    db "RANGE1",0
 ResName2	    db "RANGE2",0
 ResType	        db "IMAGE",0 
 
+cntr			db 0
+
 .data?
 hdc					dd ?
 hRgn				dd ?
