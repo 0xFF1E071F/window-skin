@@ -1,1 +1,2 @@
+#include "Res/window-skinRes.rc"
 #include "Res/window-skinDlg.rc"
