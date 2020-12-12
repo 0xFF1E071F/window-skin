@@ -22,7 +22,12 @@ DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 	.if eax==WM_INITDIALOG
 		
 	.elseif eax==WM_COMMAND
-		.if wParam == 1001
+		.if wParam == IDC_BTN1
+			;Background fill image
+			invoke  LoadBitmap,hInstance,BmpID2 
+	        invoke  CreatePatternBrush,eax
+			mov hBrush, eax
+			invoke FillRgn,hdc,hrBg,hBrush
 			
 		.endif
 	.elseif eax==WM_ERASEBKGND
@@ -36,10 +41,10 @@ DlgProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		
 		invoke FillRgn,hdc,hrBg,hBrush
 	.elseif eax==WM_CLOSE
+		; De;ete all objects
 		invoke DeleteObject, hBrush
 		invoke DeleteObject, hrBg
 		invoke ReleaseDC,hWin,hdc
-		
 		invoke EndDialog,hWin,0
 	.else
 		mov		eax,FALSE

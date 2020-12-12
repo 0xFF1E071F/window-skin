@@ -5,6 +5,7 @@ Description=window-skin
 Backup=$P\Bak\
 Group=1
 GroupExpand=1
+Res.rc=1
 [Files]
 1=window-skin.Asm
 2=window-skin.Inc
@@ -41,6 +42,8 @@ Menu=1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
 16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
 17=0,0,"$E\OllyDbg",5
 [Resource]
+1=,2001,0,clock1.bmp
+2=,2002,0,clock2.bmp
 [StringTable]
 [VerInf]
 [Group]
@@ -50,7 +53,7 @@ Group=Added files,Assembly,Resources,Misc,Modules
 3=3
 4=3
 [AutoLoad]
-AutoLoad=1,2,4
+AutoLoad=4,1,2
 [RADebugBP]
 2=
 1=
@@ -97,11 +100,11 @@ ProductVer4Range=0
 6=00FFFFFF
 7=00FFFFFF
 [PTimer]
-PTimer=32452687
+PTimer=44069061
 [Size]
 4=0,0,0,0
-2=0,0,0,0,455
-1=0,0,0,0,174
+2=2,0,492,904,388
+1=494,0,985,904,721
 [Collapse]
 2=
 1=
